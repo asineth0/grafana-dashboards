@@ -1309,8 +1309,8 @@
     ]
   },
   "timezone": "browser",
-  "title": "Docker Monitoring",
+  "title": "Docker (cAdvisor)",
   "uid": "DevOpsArt",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
