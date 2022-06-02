@@ -1273,9 +1273,7 @@
   "refresh": "5s",
   "schemaVersion": 36,
   "style": "dark",
-  "tags": [
-    "docker"
-  ],
+  "tags": [],
   "templating": {
     "list": []
   },
@@ -1309,8 +1307,8 @@
     ]
   },
   "timezone": "browser",
-  "title": "Docker (cAdvisor)",
+  "title": "Docker Monitoring",
   "uid": "DevOpsArt",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
