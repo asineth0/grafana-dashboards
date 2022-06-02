@@ -142,17 +142,17 @@
       "pluginVersion": "9.0.0-beta2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "count(rate(container_last_seen{name=~\".*.\"}[1m]))",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
           "metric": "machine_cpu_cores",
           "refId": "A",
-          "step": 20,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 20
         }
       ],
       "title": "Total Containers",
@@ -222,17 +222,17 @@
       "pluginVersion": "9.0.0-beta2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "machine_cpu_cores",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
           "metric": "machine_cpu_cores",
           "refId": "A",
-          "step": 20,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 20
         }
       ],
       "title": "CPU Cores",
@@ -308,16 +308,16 @@
       "pluginVersion": "9.0.0-beta2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[1m])) / count(node_cpu_seconds_total{mode=\"user\"}) * 100",
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A",
-          "step": 10,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 10
         }
       ],
       "timeFrom": "10s",
@@ -393,16 +393,16 @@
       "pluginVersion": "9.0.0-beta2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "(sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes) ) / sum(node_memory_MemTotal_bytes) * 100",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
           "refId": "A",
-          "step": 20,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 20
         }
       ],
       "timeFrom": "10s",
@@ -553,15 +553,15 @@
       "pluginVersion": "9.0.0-beta2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(container_fs_usage_bytes)",
           "interval": "30s",
           "intervalFactor": 2,
           "refId": "A",
-          "step": 60,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 60
         }
       ],
       "timeFrom": "10s",
@@ -620,16 +620,16 @@
       "pluginVersion": "9.0.0-beta2",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "scalar(count(container_memory_usage_bytes{image!=\"\"}) > 0)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "containers",
           "refId": "A",
-          "step": 2,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 2
         }
       ],
       "title": "Running Containers",
@@ -819,43 +819,43 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(node_disk_read_bytes_total[5m]))",
           "interval": "2s",
           "intervalFactor": 4,
           "legendFormat": "read",
           "metric": "",
           "refId": "A",
-          "step": 8,
+          "step": 8
+        },
+        {
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
-          }
-        },
-        {
+          },
           "expr": "sum(irate(node_disk_written_bytes_total[5m]))",
           "interval": "2s",
           "intervalFactor": 4,
           "legendFormat": "written",
           "metric": "",
           "refId": "B",
-          "step": 8,
+          "step": 8
+        },
+        {
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
-          }
-        },
-        {
+          },
           "expr": "sum(irate(node_disk_io_time_seconds_total[5m]))",
           "interval": "2s",
           "intervalFactor": 4,
           "legendFormat": "io time",
           "metric": "",
           "refId": "C",
-          "step": 8,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 8
         }
       ],
       "thresholds": [],
@@ -942,16 +942,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\"})) * 100",
           "intervalFactor": 10,
           "legendFormat": "{{ name }}",
           "metric": "container_cpu_user_seconds_total",
           "refId": "A",
-          "step": 10,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 10
         }
       ],
       "thresholds": [],
@@ -1039,16 +1039,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum by (name)(container_memory_usage_bytes{image!=\"\",container_label_org_label_schema_group=\"\"})",
           "intervalFactor": 1,
           "legendFormat": "{{ name }}",
           "metric": "container_memory_usage",
           "refId": "A",
-          "step": 1,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 1
         }
       ],
       "thresholds": [],
@@ -1136,16 +1136,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum by (name) (container_memory_cache{image!=\"\",container_label_org_label_schema_group=\"\"})",
           "intervalFactor": 2,
           "legendFormat": "{{name}}",
           "metric": "container_memory_cache",
           "refId": "A",
-          "step": 2,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 2
         }
       ],
       "thresholds": [],
@@ -1233,16 +1233,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum by (name) (rate(container_network_receive_bytes_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m]))",
           "intervalFactor": 10,
           "legendFormat": "{{ name }}",
           "metric": "container_network_receive_bytes_total",
           "refId": "A",
-          "step": 10,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 10
         }
       ],
       "thresholds": [],
@@ -1330,16 +1330,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum by (name) (rate(container_network_transmit_bytes_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m]))",
           "intervalFactor": 10,
           "legendFormat": "{{ name }}",
           "metric": "container_network_transmit_bytes_total",
           "refId": "A",
-          "step": 10,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          }
+          "step": 10
         }
       ],
       "thresholds": [],
@@ -1375,7 +1375,7 @@
       }
     }
   ],
-  "refresh": "5s",
+  "refresh": "30s",
   "schemaVersion": 36,
   "style": "dark",
   "tags": [],
@@ -1383,7 +1383,7 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
